@@ -1,0 +1,375 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+del,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    color: #EBD1B7;
+    vertical-align: baseline;
+    font-family: "hobo","seg","Microsoft YaHei";
+}
+
+body {
+    font-family: "Microsoft YaHei", "Josefin Sans";
+    font-size: 32px;
+    line-height: 48px;
+    color: #fff;
+    height: 100%;
+    background: #36312C;
+    background: -webkit-radial-gradient(center, ellipse cover, #36312C 0%, #36312C 80%, #1a1a1a 100%);
+    background: -khtml-radial-gradient(center, ellipse cover, #36312C 0%, #36312C 80%, #1a1a1a 100%);
+    background: -moz-radial-gradient(center, ellipse cover, #36312C 0%, #36312C 80%, #1a1a1a 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #36312C 0%, #36312C 80%, #1a1a1a 100%);
+    background: -o-radial-gradient(center, ellipse cover, #36312C 0%, #36312C 80%, #1a1a1a 100%);
+    background: radial-gradient(center, ellipse cover, #36312C 0%, #36312C 80%, #1a1a1a 100%);
+    background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Josefin Sans", "Actor";
+}
+
+h1 {
+    font-size: 96px;
+    line-height: 128px;
+}
+
+h2 {
+    font-size: 72px;
+    line-height: 96px;
+}
+
+h3 {
+    font-size: 64px;
+    line-height: 72px;
+}
+
+aside {
+    font-size: 48px;
+}
+
+a {
+    display: inline-block;
+    padding: 6px;
+    -webkit-border-radius: 12px;
+    -khtml-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border-radius: 12px;
+    color: #acd;
+    background: rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-transition: all 1s ease;
+    -khtml-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+a:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+ul {
+    list-style-type: none;
+}
+
+p ,del{
+    color: #EBD1B7;
+
+}
+
+.mosho-slide {
+    width: 700px;
+    padding: 20px;
+    -webkit-border-radius: 16px;
+    -khtml-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    border-radius: 16px;
+    /* text-align: center;*/
+    -webkit-text-shadow: 0 0 16px #fff;
+    /* shadows to simulate blur, why not? */
+    -khtml-text-shadow: 0 0 16px #fff;
+    -moz-text-shadow: 0 0 16px #fff;
+    -ms-text-shadow: 0 0 16px #fff;
+    -o-text-shadow: 0 0 16px #fff;
+    text-shadow: 0 0 16px #fff;
+    color: rgba(255, 255, 255, 0);
+    opacity: 0.2;
+    -webkit-transition: all 0.5s ease;
+    /* ease into state changes */
+    -khtml-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.mosho-slide.mosho-active {
+    -webkit-text-shadow: none;
+    -khtml-text-shadow: none;
+    -moz-text-shadow: none;
+    -ms-text-shadow: none;
+    -o-text-shadow: none;
+    text-shadow: none;
+    color: rgba(255, 255, 255, 1);
+    opacity: 1.0;
+}
+
+.code {
+    margin: 0 auto;
+    padding: 16px;
+    -webkit-border-radius: 16px;
+    -khtml-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    border-radius: 16px;
+    text-align: left;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 28px;
+    background: rgba(0, 0, 0, 0.0);
+}
+
+.mosho-active .code {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+/******* add ********/
+@font-face{
+  font-family: "hobo";
+  src: url('../font/hobostd.otf');
+
+}
+@font-face{
+  font-family: "seg";
+  src: url('../font/segoesc.ttf');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-family: "hobo","seg","Microsoft YaHei";
+    color: #F8BB39;
+    text-align: center;
+}
+
+#header h1,
+#header h2 {}
+
+#html_con {
+    width: 700px;
+}
+
+#html_con li {
+    padding: 0px 100px;
+}
+
+
+/**** 前端介绍 ***/
+
+#introduce {
+}
+
+div#introduce > div {
+    width: 6em;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    height: 6em;
+    border-radius: 12em;
+    line-height: 6em;
+    background: #3E9CD1;
+    opacity: 0.8;
+}
+
+div#introduce div:nth-child(1){
+    top: 100px;
+    background: #FF1C72;
+}
+
+div#introduce div:nth-child(2){
+    top: 41px;
+    background: #3E9CD1;
+    left: -77px;
+}
+
+div#introduce div:nth-child(3){
+    top: -150px;
+    left: 72px;
+    background: #7BB651;
+}
+
+
+.code {
+    color: white;
+    width: 1000px;
+}
+
+.exagesis {
+    background: #24211E;
+    color: #95CC5E;
+    font-family: "Microsoft YaHei";
+    position: absolute;
+    padding: 3px 20px;
+}
+
+.mosho-slide pre {}
+
+.html_code {
+    position: absolute;
+    width: 1000px;
+    top: 144px;
+}
+
+#html_doctype {
+    top: 0;
+    left: 700px;
+}
+
+#html_head {
+    top: 90px;
+    left: 700px;
+}
+
+#html_title {
+    top: 192px;
+    left: 700px;
+}
+
+#mosho-slide-doctype {
+    /*  width: 600px;*/
+}
+
+
+/****文档类型****/
+
+#loo_doc {
+    top: 0px;
+    left: 783px;
+}
+
+#str_doc {
+    top: 143px;
+    left: 784px;
+}
+
+#xht_str_doc {
+    top: 290px;
+    left: 784px;
+}
+
+#xht_stress {
+    top: 440px;
+    left: 320px;
+}
+
+
+/*********HTML难点 *******/
+
+.exagesis_tags {
+    background: #24211E;
+    color: #95CC5E;
+    font-family: "Miscrosoft YaHei";
+    position: relative;
+    border-radius: 5px;
+    padding: 7px 20px;
+    margin: 0px 5px;
+}
+
+
+/******* SublimeText3的插件 *********/
+
+#plugin {
+    width: 1000px;
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML And CSS</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="mosho">
+        <div class="mosho-slide" id="header" data-scale=1>
+            <h1>HTML And CSS</h1>
+            <h4>主讲人：张诗婷</h4>
+        </div>
+        <!-- 开始前端总体的一个学习内容介绍 -->
+        <div class="mosho-slide" data-x=360 data-y=-360 data-z=360 data-roty=-180>
+            <h1>前端三剑客</h1>
+        </div>
+        <div id="introduce" class="mosho-slide" data-x=720 data-y=720 data-z=720 data-rotx=45>
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+        </div>
+        <!-- HTML 的 基础-->
+        <div class="mosho-slide" id="html_con" data-x=480 data-y=240 data-z=360>
+            <h1>HTML</h1>
+            <p>超文本标记语言(HyperText Markup language)</p>
+            <p>作用： 用于描述网页文档</p>
+            <ul>特点：
+                <li>简易性（入门简单）</li>
+                <li>可扩展性（链接样式等）</li>
+                <li>平台无关性</li>
+            </ul>
+        </div>
+        <div class="mosho-slide" data-x=480 data-y=360 data-z=360 date-scale=1.5>
+            <h1>HTML特点</h1>
+            <p>
+                网页文件本身是一种文本文件，通过在文本文件中添加标记符，可以告诉浏览器如何显示其中的内容。浏览器按顺序解析网页文件，然后根据标记符解释和显示其标记的内容，对书写出错的标记将不指出其错误，且不停止其解释执行过程，编写者只能通过显示效果来分析出错原因和出错部位。
+            </p>
+        </div>
+        <div class="mosho-slide code" data-x=480 data-y=360 data-z=240>
+            <h1>代码示例</h1>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;title>网络组HTML培训&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- 网页整体内容 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+            <div class="html_code">
+                <span class="exagesis" id="html_doctype">文档类型</span>
+                <span class="exagesis" id="html_head">文档头部</span>
+                <span class="exagesis" id="html_title">文档标题</span>
+            </div>
+        </div>
+        <div class="mosho-slide code" id="mosho-slide-doctype" data-x=1200 data-y=3600 data-z=2400>
+            <h1 id="doctype">文档类型</h1>
+            <pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
+1.0 Strict//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
+1.0 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
+1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+
+&lt;!DOCTYPE html&gt;
+			</pre>
+            <div class="html_code">
+                <span class="exagesis" id="loo_doc">HTML4(宽松)</span>
+                <span class="exagesis" id="str_doc">HTML4(严格)</span>
+                <span class="exagesis" id="xht_str_doc">XHTML1</span>
+                <span class="exagesis" id="xht_stress">HTML5</span>
+            </div>
+        </div>
+        <div class="mosho-slide" data-x=1120 data-y=1240 data-z=-480 data-roty=-180>
+            <h1>HTML难点</h1>
+            <p>1. 块级元素和内联元素</p>
+            <div>
+                <p>块级元素:</p>
+                <span class="exagesis_tags">新行开始</span>
+                <span class="exagesis_tags">宽高可控</span>
+                <span class="exagesis_tags">包含块级</span>
+            </div>
+            <div>
+                <p>内联元素:</p>
+                <span class="exagesis_tags">同行显示</span>
+                <span class="exagesis_tags">宽高默认</span>
+                <span class="exagesis_tags">只容内联</span>
+            </div>
+        </div>
+        <div class="mosho-slide" data-x=1120 data-y=2240 data-z=-480 data-roty=-180>
+            <h1>HTML难点</h1>
+            <p>2. HTML结构 嵌套</p>
+            <p>3. HTML标签含义 意义（语义化）</p>
+            <p>4. HTML代码规范化 合理化</p>
+            <p>5. HTML重构（网页重构师）</p>
+            <p>6. 网页兼容性</p>
+        </div>
+        <div class="mosho-slide" data-x=480 data-y=240 data-z=360>
+            <h1>XHTML</h1>
+            <p>可扩展超文本标记语言</p>
+            <p>EXtensible HyperText Markup language</p>
+            <p>XHTML 与 HTML 4.01 几乎是相同的，但更纯净更严谨。XHTML是基于XML的应用。</p>
+            <p>编写HTML的时候应尽量根据XHTML的规范书写，养成良好的习惯</p>
+        </div>
+        <div class="mosho-slide" data-x=2400 data-y=800 data-roty=360>
+            <h1>XML</h1>
+            <p>可扩展性标记语言</p>
+            <p>EXtensible Markup Language</p>
+            <p>浏览器也支持XML文档的解析，用分级缩进的方式显示。</p>
+        </div>
+        <div class="mosho-slide" style="width:800px;" data-x=1200 data-y=1200 data-rotx=360>
+            <h1>XHTML VS HTML</h1>
+        </div>
+        <div class="mosho-slide" data-x=2400 data-y=800 data-roty=360>
+            <h1>XHTML规范->HTML规范</h1>
+            <ul>
+                <li>XHTML元素必须被正确地嵌套。</li>
+                <li>XHTML元素必须被关闭。</li>
+                <li>标签名必须用小写字母。</li>
+                <li>XHTML文档必须拥有根元素。</li>
+            </ul>
+        </div>
+        <!-- HTML5待定 -->
+        <div class="mosho-slide" data-x=480 data-y=360 data-z=240 data-rotx=45>
+            <h1>HTML5</h1>
+            <p>HTML5是用于取代1999年所制定的 HTML 4.01 和 XHTML 1.0 标准的 HTML 标准版本，现在仍处于发展阶段，预计2022年完成。但大部分浏览器已经支持某些 HTML5 技术。</p>
+        </div>
+        <div class="mosho-slide" data-x=480 data-y=360 data-z=240 data-rotx=45>
+            <h1>HTML5</h1>
+            <p>HTML5新增了一些标签、也废弃了一些没用的标签。如新增了header,section,article,footer等用于布局。然而，由于现在老式浏览器还没有完全淘汰，所以使用范围并不是很广泛（特别是国内IE浏览器横行）。</p>
+        </div>
+        <!-- SublimeText3插件部分 初级版 -->
+        <div class="mosho-slide code" data-x=1200 data-y=3600 data-z=2400>
+            <h3>讲完了HTML部分，我们来聊一聊前端开发利器吧。</h3>
+        </div>
+        <div class="mosho-slide" id="plugin" data-x=3600 data-y=2400 data-z=3600 data-rotx=45>
+            <h3>Sublime Text3插件</h3>
+            <h4>Package Control:安装包管理器</h4>
+            <p>
+                <span class="exagesis_tags">Ctrl+`</span>打开控制台或者View->Show Console菜单打开命令行.
+            </p>
+            <p>
+                import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+            </p>
+        </div>
+        <!-- Sublime Text插件推荐一点 -->
+        <div class="mosho-slide" data-x=480 data-y=360 data-z=240 data-rotx=45>
+            <h2>Sublime Text3插件</h2>
+            <h3>emmet:编码利器</h3>
+        </div>
+        <div class="mosho-slide">
+            <h2>Sublime Text3插件</h2>
+            <h3>Sublime-HTMLPrettify:代码排版插件</h3>
+        </div>
+        <div class="mosho-slide">
+            <h3>Sublime Text3插件</h3>
+            <h2>等着你们去解锁更多<del>新姿势</del>新插件</h2>
+        </div>
+        <!-- CSS的基本内容 -->
+        <div class="mosho-slide" data-x=480 data-y=360 data-z=240 data-rotx=45>
+            <h1>CSS</h1>
+            <p>Cascading Style Sheets，层叠样式表。</p>
+            <p>CSS目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。相对于传统HTML的表现而言，CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群，有较强的易读性.</p>
+        </div>
+        <div class="mosho-slide" data-x=2400 data-y=800 data-roty=360>
+            <h1>如何链接CSS</h1>
+            <ul>
+                <li>外部样式链接（使用link标签）</li>
+                <li>内部样式链接（使用style标签）</li>
+                <li>内部元素链接（使用style属性）</li>
+            </ul>
+        </div>
+        <div class="mosho-slide" data-x=1020 data-y=800 data-z=800 data-rotx=45>
+            <h1>CSS布局</h1>
+            <ul>
+                <li>固定布局</li>
+                <li>流式布局</li>
+                <li>响应式布局</li>
+            </ul>
+        </div>
+        <!-- 附加东西： 静态页面就好 -->
+        <div class="mosho-slide">
+            <h1>作业</h1>
+            <p>做一个个人主页</p>
+            <p>可参考QQ空间，新浪微博等等，也可以自由想象。</p>
+            <p>时间：星期日（即4月24日）晚上8点前交给各自负责的师兄师姐。</p>
+        </div>
+        <div class="mosho-slide" data-roty=-160 data-animation="2s ease">
+            <h1>谢谢观看</h1>
+        </div>
+    </div>
+    <script type="text/javascript" src="../dist/mosho.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+body{
+	background: white;
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+#subwrapper{
+	background: white;
+	width: 1024px;
+	height: 20em;
+	font-size: 30px;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#wrapper{
+	width: 720px;
+	height: 20em;
+	background: #00C3D5;
+	/*text-align: left;*/
+	float: left;
+}
+
+#section{
+	width: 300px;
+	height: 20em;
+	background: #88CB5A;
+	text-align: center;
+	float: right;
+}
+
+#section img{
+	width: 90%;
+
+}
+
