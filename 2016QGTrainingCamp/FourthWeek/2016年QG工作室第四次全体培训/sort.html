@@ -1,0 +1,580 @@
+<!doctype html>
+
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="sort.css">
+    <link rel="stylesheet" href="ThirdParty/jquery-ui-1.8.11.custom.css">
+            
+    <script src="ThirdParty/jquery-1.5.2.min.js"></script>
+    <script src="ThirdParty/jquery-ui-1.8.11.custom.min.js"></script>
+</head>
+
+<body>
+
+<div id="impress">
+    <div>
+    <div id="title" class="step" data-x="0" data-y="-2000" data-z="0">
+        <h1 style="margin-bottom: 10px;">
+            
+            <span class="css">让程序<span class="d3">飞</span></span>
+            <span class="transforms" style="font-size: 50px">算法分析与排序</span>
+        </h1>
+
+        <span class="author" style="margin-top: 10px;">
+            <i>by</i><br/>
+            <span class="name">QG网络组</span> <a href="http://twitter.com/bartaz">@QG工作室</a>
+   
+        </span>
+
+    </div>
+
+    
+
+    <div class="step sideFace" data-x="0" data-y="0" data-z="-2000">
+        
+        <p class="title">程序是怎么飞起来的呢？</p>
+
+        <div style="margin: 10px 0 30px 30px">
+            <ul style="line-height: 1.75;">
+                <li class="substep">编译　　→　　汇编语言</li>
+                <li class="substep">汇编　　→　　机器语言</li>
+                <li class="substep">链接　　→　　可执行文件</li> 
+                <li class="substep">加载　　→　　从硬盘到内存</li>
+                <li class="substep">执行　　→　　CPU读取解析执行指令</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step sideFace" data-x="900" data-y="0" data-z="-2000">
+
+        <p class="title">忽略可变因素</p>
+
+        <p style="text-align: center;">一个程序性能的关键因素——<b style="font-size: 40px">算法</b> & 编程思路</p>
+    </div>
+
+    <div class="step sideFace" data-x="1800" data-y="0" data-z="-2000">
+
+        <p class="title">算法与数据结构</p>
+
+        <p class="content" style="padding-left: 100px;">
+            > 链表 栈 队列 <br/>
+            > 学习的目标：<br/>
+            <span style="padding-left: 80px;"> 现实世界的抽象，学会编写API接口</span>
+        </p>
+    </div>
+
+        <!--
+            # 为什么会有 链表 栈 队列这样的抽象结构
+            # 是从现实生活中映射过来的 
+        -->
+        <!-- 
+            * 模拟一个银行的系统 : 队列;
+            * 模拟吃薯片 : 栈
+            * 模拟班级同学 ： 链表
+
+            * 学习数据结构中：还有一个重要的思想黑箱思想，学会设计自己的API，隐藏底层实现
+            * 从低级封装 → 高级封装
+
+            * 算法与数据结构的关系：将现实生活抽离成对应的数据结构，然后基于该数据来实现你的算法
+        -->
+        
+        <!--算法的领域很深，也很广，它和数学也密切相关，因为算法的分析会牵涉到大量的数学知识,尤其是概率论，所以我会尽量的避免复杂的数学分析-->
+    <div class="step sideFace" data-x="2700" data-y="0" data-z="-2000">
+        <p class="title"> 算法的领域</p>
+        <p class="content" style="padding-left: 100px;">
+
+          <span class="substep"> >　图像处理　</span> <br> 
+            <img class="substep" src="img/image1.jpg" width="300px" style="position: absolute;padding-left: 350px">
+            <img class="substep" src="img/image2.jpg" width="300px" style="position: absolute;padding-left: 350px">
+          <span class="substep"> >　加密学   </span><br>
+          <span class="substep"> >　人工智能 </span>
+          <span class="substep"> </span>
+        </p>
+    </div>
+
+    <div class="step sideFace" data-x="4700" data-y="0" data-z="-3000">
+        <h1 class="main" style="color: #1c94c4">算法分析</h1>
+
+        <h2 style="font-size: 35px; padding-left: 316px"> —— 时间复杂度 & 空间复杂度 </h2>
+    </div>
+
+    <div class="step sideFace yaHei" data-x="4700" data-y="1000" data-z="-3000">
+        <div style="padding: 100px 0 0 25px;">
+        <h2 class="algor">时间效率(时间复杂度)</h2>
+
+        <p>
+            <span class="substep"><b>输入规模</b>: 对于规模更大的输入，一般需要更长的时间</span><br/>
+            <span class="substep"><b>运行时间的度量单位：</b>统计算法中每一步的执行次数</span>
+            <span class="substep"></span>
+        </p>
+        </div>
+    </div>
+
+    <div class="step" style="width: 1100px;" data-x="4700" data-y="2000" data-z="-3000">
+        <!-- markdown -->
+        <pre style="font-family: 'Source Code Pro',monospace; white-space: pre-wrap; display: block; background-color: rgba(102,128,153,0.05); color: #333; word-wrap: break-word; font-size: .9em; background: #f6f6f6; line-height: 1.6; margin: 0 0 1.1em; padding: 0; border: 0; border-radius: 5px; text-align: start; word-break: break-all;"><code style="font-family: 'Source Code Pro',monospace; font-size: inherit; background-color: transparent; white-space: pre-wrap; border-radius: 0; color: #f8f8f2; display: block; background: #23241f; padding: 1.3em 1em;"><span style="line-height: 1.6; color: #75715e;">// 计算 1^3 + 2^3 + ... + N^3</span><br/> <span style="line-height: 1.6; color: #f92672;"><span style="line-height: 1.6; color: #66d9ef;">int</span> <span style="line-height: 1.6; color: #a6e22e;">sum</span><span style="line-height: 1.6; color: #f8f8f2;">(<span style="line-height: 1.6; color: #66d9ef;">int</span> N)</span> </span>{<br/>     <span style="line-height: 1.6; color: #f92672;">int</span> i, partialSum;<br/><br/>     partialSum = <span style="line-height: 1.6; color: #ae81ff;">0</span>;              <span style="line-height: 1.6; color: #75715e;">//  赋值语句：1个时间单位</span><br/>     <span style="line-height: 1.6; color: #f92672;">for</span> (i = <span style="line-height: 1.6; color: #ae81ff;">1</span>; i &lt;= N; i++)     <span style="line-height: 1.6; color: #75715e;">//  1次赋值; N+1次比较; N次自增</span><br/>         partialSum += i * i * i; <span style="line-height: 1.6; color: #75715e;">//  1*N次赋值；2*N次乘法； 1*N次加法</span><br/><br/>     <span style="line-height: 1.6; color: #f92672;">return</span> partialSum;           <span style="line-height: 1.6; color: #75715e;">//  返回语句：1个时间单位</span><br/> }<br/></code></pre>
+        
+    </div>
+
+    <div class="step sideFace yaHei" data-x="4700" data-y="3000" data-z="-3000">
+        <h2 class="algor">评估算法的时间增长率(时间复杂度)</h2>
+        <p>
+            <span class="substep">① 算法的基本操作通常是：最内层循环中最费时</span><br/>
+            <span class="substep">② 6N+4 → (内层循环)4N → 去掉系数得到N</span><br/>
+        </p>
+        <p style="padding-top: 10px">
+            <span class="substep">* 算法的时间复杂度用 <b style="color: #1c94c4">符号 O</b> 表示; </span><br/>
+            <span class="substep">* O(N) ：表示随着输入的增大，算法的时间增长速度与输入成正比；代表着一个算法的最坏情况的运行时间（上界）</span>
+            <span class="substep"></span>
+        </p>
+    </div>
+
+    <div class="step sideFace yaHei" data-x="4700" data-y="4000" data-z="-3000">
+        <h2 class="algor" style="text-align: center">常用时间复杂度</h2>
+
+        <div style="text-align: center; margin-top: 20px">
+            <img src="img/time.png">
+        </div>
+    </div>
+
+    <div class="step sideFace yaHei" data-x="4700" data-y="5000" data-z="-3000">
+        <div style="padding: 150px 0 0 25px;">
+        <h2 class="algor" style="text-align: center">空间复杂度</h2>
+        <p style="text-align: center">函数的<b style="color: #1c94c4">形参</b>与<b style="color: #1c94c4">局部变量</b>所占存储空间</p>
+        </div>
+    </div>
+ 
+    <div class="step hidden" data-x="-10000" data-y="30000" data-z="0" data-rotate="0" data-scale="200">
+       <h1 style="font-size: 110px; font-family: Antipasto">算法基础：SORT</h1>
+    </div>
+
+    <div id="fund" class="step little" data-x="36000" data-y="31000" data-z="6000" data-rotate="0" data-scale="20">
+
+        <p class="title">生活中的SORT</p>
+
+        <p class="content">
+            <span class="substep"><b>+ 竞选总统 </b></span><br>
+            <img class="substep" src="img/president.jpg" width="400px" height="290" style="position: absolute;padding-left: 300px">
+            <span class="substep"><b> + 百度搜索 <</span><br>
+            <div style="position: absolute;margin-top: -370px"><img  class="substep" src="img/baidu.png"></div>
+            <span class="substep"> </span>
+        </p>    
+    </div>
+
+    <div id="first" class="step yaHei" data-x="75500" data-y="54580" data-z="80000" data-rotate="10" data-scale="10">
+        <p class="title">已经学过的排序算法</p>	 	
+
+        <p style="text-align: center; line-height: 1.7">
+            <span class="substep">排序算法的思想</span><br>
+            <span class="substep">排序算法的改进</span><br>
+            <span class="substep">最坏 与 平均</span>
+            <span class="substep"></span>
+        </p>
+    </div>
+
+
+    <div class="sort yaHei">
+
+        <div class="select">
+            <!-- 顶面 正方形 -->
+            <div class="boxFace step" data-x="-5000" data-y="90" data-z="-985" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <div style="margin-top: 120px;">
+            	<h1 class="main">年度最佳暴力奖</h1>
+                
+            	<h2 style="font-size: 45px; padding-left: 500px"> —— 蛮力法</h2>
+                </div>
+                
+            </div>
+
+            <!-- 获奖嘉宾 -->
+            <div class="boxFace step" data-x="-4800" data-y="90" data-z="-1185" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="0.5">
+
+            	<h2 class="italic">获奖者</h2>
+                <h2 class="title"> —— 选择排序</h2>
+
+              
+                <p style="padding-left: 100px; line-height: 1.75;">
+                    <span>第一次遍历</span>　<span style="color: #1c94c4">8 5 4 <b style="color: #A00ADC">1</b> 2 3 → <b style="color: #A00ADC">1</b> 5 4 <b style="color: #A00ADC">8</b> 2 3</span><br/>
+                    <span>第二次遍历</span>　<span style="color: #1c94c4">1 5 4 8 <b style="color: #A00ADC">2</b> 3 → 1 <b style="color: #A00ADC">2</b> 4 8 <b style="color: #A00ADC">5</b> 3</span><br>
+                    <span>第N次遍历...</span>
+                </p>
+            </div>
+
+            <div class="boxFace step"  data-x="-5000" data-y="90" data-z="-1385" data-rotate-x="0" data-rotate-y="180" data-rotate-z="0" data-scale="0.5">
+            
+                <h2 class="title2">选择排序性能分析</h2>
+                    <pre class="code">
+                      <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">) {</span> 
+                         <span class="n">min</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+                         <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                            <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+                               <span class="n">min</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+                         <span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">]);</span>
+                      <span class="p">}</span>
+                    
+                    </pre>
+                <p style="line-height: 2; font-size: 28px; padding: 10px 0 40px 0;">
+                    <span>用比较次数来衡量时间复杂度</span> <br/>
+                    <span style="font-size: 27px">&nbsp;&nbsp;&nbsp;(N-1)+(N-2)+...+2+1 = N(N-1)/2 ~ N^2/2 = O(N^2)</span><br/>
+                    <span>空间复杂度: O(1);</span>
+                </p>
+            </div>
+            
+            
+        </div>
+          
+   
+        <!--插入排序 -->
+        <div class="insert">
+            <div class="boxFace step" data-x="-2000" data-y="290" data-z="-2985" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <h1 class="main">年度最佳抠门奖</h1>
+                <h2 style="font-size: 45px; padding-left: 500px"> —— 减治法</h2>
+
+                <p style="font-size: 28px; padding: 100px 0 0 72px;">今晚南亭走一波,但是我只带了买一个菜的钱</p>
+            </div>
+
+            <div class="step topFace" data-x="-2000" data-y="133" data-z="-3183" data-rotate-x="90" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2">减治法</h2>
+
+                <p style="line-height: 1.75">
+                    <span class="hidden substep">Demo: f(n) = a^n;</span><br>
+                    <span class="hidden substep">先求n-1: f(n) = f(n-1) * a;</span><br/>
+                    <span class="hidden substep">先求n-2: f(n-1) = f(n-2) * a</span><br>
+                    <span class="hidden substep">直到a^0 → 1</span><br>
+
+                    <span class="hidden substep" style="padding-left: 30px; font-size: 40px; color: #1c94c4;">排序N个序列</span><br>
+                    <span class="hidden substep">排好N-1个序列，再插入第N个数</span><br>
+                    <span class="hidden substep">排好N-2个序列，再插入第N-1个数</span><br>
+                    <span class="hidden substep" style="padding-left: 30px; font-size: 40px; color: #1c94c4;">规律</span><br>
+                    <span class="hidden substep"> * 将规模为n的问题 变为规模为 n-1的子问题 </span><br/>
+                    <span class="hidden substep"> * 减去的规模数是一个常数(这个常数是可变的)</span>
+                    <span class="substep"></span>
+                </div>
+                </p>
+
+
+            </div>
+            <div class="boxFace step" data-x="-1800" data-y="290" data-z="-3185" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="0.5">
+                <h2 class="italic">获奖者</h2>
+                <h2 class="title"> —— 插入排序</h2>
+
+                <p>
+                    <span style="padding: 0 0 40px 40px; margin: 40px;"><b style="color: #1c94c4">4 3 1 2</b> 的排序序列</span><br/><br>
+                    <span class="hidden substep" style="padding-left: 180px;"> → 4  </span><br>
+                    <span class="hidden substep" style="padding-left: 200px;"> → 3 4 </span><br>
+                    <span class="hidden substep" style="padding-left: 230px;"> → 1 3 4 </span><br>
+                    <span class="hidden substep" style="padding-left: 260px;"> → 1 2 3 4</span>
+                </p>
+            </div>
+
+            <div class="step boxFace"  data-x="-2000" data-y="290" data-z="-3385" data-rotate-x="0" data-rotate-y="180" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2" style="padding-left: 40px">时间复杂度分析</h2>
+
+                <pre class="code">
+                    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
+                            <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                        <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+                    <span class="p">}</span>
+                </pre>
+
+                <p class="substep hidden" style="text-align: center; font-size: 35px; color: #A00ADC">
+                    时间复杂度：O(N^2);
+                </p>
+            </div>
+
+           
+
+            <div class="step topFace" data-x="-2000" data-y="453" data-z="-3183" data-rotate-x="-90" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2" style="padding-left: 40px">插入与选择排序</h2>
+
+                <p style="font-size: 30px; line-height: 2">
+                    <span class="substep hidden"><b>* 共同点：</b>时间复杂度 —— O(N^2)</span><br>
+                    <span class="substep hidden"><b>* 插入排序：</b>若数组有序(1 2 3 4 5) 只进行N次比较</span><br>
+                    <span class="substep hidden"><b>* 插入排序：</b>若数组逆序(5 4 3 2 1) 需N^2/2次比较</span><br>
+                    <span class="substep hidden"><b>* 插入排序：</b>平均时间 ~ N^2/4</span><br>
+                    <span class="substep hidden" style="color: #A00ADC"><b>* 选择排序：</b></span><br/><span class="substep hidden" style="color: #A00ADC">即使在数组有序的情况下，时间复杂度依然是O(n^2);</span><br/>
+                    <span class="substep hidden"><b>* 选择排序：</b>平均时间 ~ N^2/2</span><br>
+                    <span class="substep hidden">更多的是选用插入排序,而不是选择排序</span>
+                </p>
+            </div>
+        </div>
+
+        <!--归并排序-->
+        <div class="merge">
+            <div class="boxFace step" data-x="2000" data-y="190" data-z="-5985" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <h1 class="main" style="padding-right: 0;">年度最佳优秀奖</h1>
+
+                <h2 style="font-size: 45px; padding-left: 450px"> —— 分治与递归</h2>
+                <p>非常著名而且通用的算法设计，很多经典的算法都是通过分治与递归的思想来实现</p>
+            </div>
+
+            <div class="step topFace" data-x="2000" data-y="33" data-z="-6185" data-rotate-x="90" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2" style="padding-left: 40px">一 分而治之</h2>
+
+                <p class="content" style="text-align: left; line-height: 1.65; padding-left: 40px;font-size: 27px; padding-bottom: 5px;">
+
+                    <b style="font-size: 35px;">将一个问题化为两个较小的子问题 </b><br/>
+                    <span class="substep hidden" style="padding-left: 50px"> f(n) = a^n </span><br/>
+                    <span class="substep hidden" style="padding-left: 50px">转化为求： a^(n/2) * a^(n/2)</span><br/>
+                    <span class="substep hidden" style="padding-left: 50px">继续转化： (a^(n/4) * a^(n/4)) * (a^(n/4) * a^(n/4)) ......</span>
+                </p>
+
+                <h2 class="title2 substep hidden" style="padding-left: 40px">二 递归</h2>
+                <p class="content" style="text-align: left; line-height: 1.75; padding-left: 40px;font-size: 27px; padding-bottom: 5px;">
+                    <span class="substep hidden">* 汉诺塔 64层</span><br>
+                    <span class="substep hidden">* 斐波那契数列</span><br/><br/>
+                    <span class="substep hidden">① 有一个最简单的基础规则可以直接得到答案</span><br/>
+                    <span class="substep hidden">② 另一个规则将问题转化为另一个低一级别的问题</span></br/>
+                </p>
+
+                <p class="substep hidden" style="color: #A00ADC; text-align: center;">不是所有的分治算法都一定要比蛮力法更加高效</p>
+            </div>
+
+            <div class="boxFace step" data-x="2200" data-y="190" data-z="-6185" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title" style="padding: 10px 0 40px 40px">获奖者 —— 归并排序</h2>
+
+                <div style="padding: 20px 0 0 50px; line-height: 2; font-family: 'Delicious', 'Arial', sans-serif">
+                    <div>排序序列:　<span class="number" style="color: #1c94c4;margin-left: 70px;">3 6 2 5 8 4 7</span></div>
+                    <div class="substep hidden">
+                        一次分治:　<span class="numBlue" style="margin-right: 70px;margin-left: 40px;">3 6 2 5</span> <span class="numPink">8 4 7</span><br/>
+                    </div>
+                    <div class="substep hidden">
+                        两次分治:　<span class="numBlue" style="margin-left: 25px;margin-right: 25px;">3 6</span> <span class="numBlue">2 5</span> <span class="numPink" style="margin-left: 30px;margin-right: 20px;">8 4</span> <span class="numPink">7</span>
+                    </div>
+                    <div class="substep hidden">
+                        三次分治:　<span class="numBlue" style="margin-left: 10px;">3</span> <span class="numBlue" style="margin-right: 5px;margin-left: 10px;">6</span> <span class="numBlue">2</span> <span class="numBlue" style="margin: 0 8px 0 9px;">5</span> <span class="numPink">8</span> <span class="numPink" style="margin: 0 10px 0 7px;">4</span> <span class="numPink">7</span>
+                    </div>
+                    <div class="substep hidden">
+                        一次合并:　<span class="numBlue" style="margin: 0 28px 0 23px;">3 6</span> <span class="numBlue">2 5</span> <span class="numPink" style="margin: 0 19px 0 30px;">4 8</span> <span class="numPink">7</span>
+                    </div>
+                    <div class="substep hidden">
+                        两次合并:　<span class="numBlue" style="margin: 0 62px 0 45px;">2 3 5 6</span> <span class="numPink">4 7 8</span>
+                    </div>
+
+                </div>
+            </div>
+
+    
+
+            <div class="step boxFace"  data-x="2000" data-y="190" data-z="-6385" data-rotate-x="0" data-rotate-y="180" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2">时间复杂度分析</h2>
+                <pre class="code">
+                    Mergesort(A[0...n-1])
+                        if n > 1
+                            copy A[0...[n/2]-1] to B[0...[n/2]-1] 　// 辅助数组B
+                            copy A[[n/2]...n-1] to C[0...[n/2]-1]   // 辅助数组C
+                            Mergesort(B[0..[n/2]-1])      // 分治
+                            Mergesort(C[0..[n/2]-1])      // 分治
+                            Merge(B, C, A);               // 将排序好的子数组合并成有序数组
+                </pre>
+
+                <p style="font-size: 30px; line-height: 1.75; color: #A00ADC">
+                    <span class="substep hidden" >时间复杂度: 设时间复杂度为 —— y(n)</span><br/>
+                    <span class="substep hidden">转化为求解：y(n) = 2y(n/2) + n → y(n) = nlog(n)</span><br/>
+                    <span class="substep hidden">空间复杂度：辅助数组 O(N)</span>
+                </p>
+                
+            </div>
+
+            <div class="step boxFace" data-x="1800" data-y="190" data-z="-6185" data-rotate-x="0" data-rotate-y="270" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2" style="text-align: center;padding-top: 40px;">归并与插入</h2>
+
+                <p style="font-size: 30px; padding-top: 80px; line-height: 1.75;">
+
+                + 优点：时间复杂度远远优越插入排序；<br/>
+                　　　　适合较大型数据排序<br><br>
+                + 缺点：额外的递归调用和空间占用使得排序数据量较小时效率不如插入排序<br>
+                </p>
+            </div>
+        </div>
+
+         <div class="step" data-x="18000" data-y="8000" data-z="8000"  data-scale="0.5">
+            <h2 class="title" style="padding: 0">
+                同样是排序，选择排序的时间效率为什么这么慢？？？
+            </h2>
+        </div>  
+
+
+         <div class="step hidden" data-x="18000" data-y="7800" data-z="7000"  data-scale="0.5">
+            <h2 class="title" style="padding: 0">
+                番外篇之：决策与选择
+            </h2>
+        </div>  
+
+        <div class="step hidden" data-x="19000" data-y="7800" data-z="5500"  data-scale="0.5" data-rotate-x="0">
+            <p class="title" style="padding-left: 0">猜数字</p>
+        </div>
+
+        <div class="step sideFace yaHei hidden" data-x="19400" data-y="7800" data-z="4800" data-scale="0.5">
+            <p> 
+                <span>两种策略</span><br>
+                <span>① 32 → 16 → 8 → 4...</span><br>
+                <span>②  1 → 2 → 3 → 4 ...</span></br>
+            </p>
+            <p style="font-size: 30px; padding-top: 10px; color: #1c94c4;">
+                <span class="hidden substep">为什么策略②要远远糟糕于策略①</span><br>
+                <span class="hidden substep"><b style="font-size: 40px;">我们从算法的最坏情况考虑(即算法的下界)</b></span><br>
+                <span class="hidden substep">策略②最坏情况要猜测64次才能猜对(糟糕的下界)</span><br>
+                <span class="hidden substep">策略①不论<b style="color: #A00ADC">坏</b>还是<b style="color: #A00ADC">好</b>,概率均为<b style="color: #A00ADC">1/2</b></span>
+                <span class="hidden substep">策略①的时间复杂度: <b style="color: #A00ADC">O(logN)</b></span>
+                <span class="substep"></span>
+            </p>
+        </div>  
+
+        <div class="step hidden sideFace yaHei" data-x="20000" data-y="7800" data-z="4100" data-scale="0.5">
+            <p>
+                <span style="color: #A00ADC;">二分策略是不是最优的？有没有更快的呢？</span><br><br>
+
+                <span class="hidden substep">没有更快的策略!</span> <br><br>
+
+                <span class="hidden substep"><b style="color: #1c94c4;">WHY ? ? ? </b></span> <br>
+                
+                <span class="hidden substep"><b style="color: #1c94c4;">Beacuse：</b>每次答案只有<b>偏大</b> or <b>偏小</b>两个分支, 只有<b>偏大</b>与<b>偏小</b>等概率时，才不存在最坏情况</span>
+            </p>
+        </div>
+
+        <div class="step hidden" style="width: 1000px;" data-x="21000" data-y="7800" data-z="3400"  data-scale="0.5">
+            <h2 style="padding: 0; color: rgb(28, 136, 179); font-size: 1.3em; font-weight: bold;">
+                12个球一模一样的球中找出一个坏球（重 or 轻）
+            </h2>
+        </div>    
+        
+        <div class="step hidden sideFace yaHei" data-x="22000" data-y="7800" data-z="2700"  data-scale="0.5">
+            <p style="font-size: 30px;">
+                <span class="title">经典问题 —— 秤球</span><br/>
+                有12个等质量的球, 但是一个球在某一天坏掉了,坏球<b style="color: #1c94c4;">可能变轻,也可能变重</b>.<br>
+                用一个天平, <b style="color: #1c94c4;">最少</b>经过几次<b style="color: #1c94c4;">一定</b>可以找出坏球, 并<b style="color: #1c94c4;">说明球是变轻了还是变重</b>了.
+            </p>
+        </div>
+
+        <div class="step hidden sideFace yaHei" data-x="23000" data-y="7800" data-z="2000"  data-scale="0.5">
+            <p class="content" style="font-size: 27px; line-height: 2.2;">
+                
+                <span>12个球每个球都可能变轻或者变重 → 24种可能</span><br>
+                <span>策略：每次称量将球分成两堆</span><br/><br/>
+                <span class="numBlue" style="margin: 30px 0 0 90px;">1 2 3 4 5 6</span>放在天平左侧<span class="numRed">7 8 10 11 12</span> 放在天平右侧 <br><br>
+                <span style="color: #1c94c4;">假设天平左倾</span><br>
+                <span style="color: #A00ADC;">1 2 3 4 5 6为重</span> <span> or </span> <span style="color: #A00ADC;">7 8 9 10 11 12为轻</span><br>
+                <span>排除了1/2的可能性</span><br>
+            </p>
+        </div>
+
+ 
+        <div class="step hidden sideFace yaHei" data-x="24000" data-y="7800" data-z="1300"  data-scale="0.5">
+            <p style="font-size: 30px;line-height: 3;">
+                <span class="title">这个策略是最优的吗?</span>
+                <span class="substep hidden">Ⅰ 称量结果有三种: 左倾; 平衡; 右倾</span><br>
+                <span class="substep hidden" style="line-height: 1.75;">Ⅱ 将球分成两堆,永远不会有平衡的概率;每次称量减少1/2的可能性</span><br>
+                <span class="substep hidden">Ⅲ 只有每一种结果的概率是相同时, 才不会存在最坏情况</span><br>
+                <span class="substep hidden">Ⅳ 最优解：将平均球分成三堆来进行称量;每次称量可以减少2/3的可能性</span>
+            </p>
+        </div>
+
+        <div class="step hidden sideFace yaHei" data-x="25000" data-y="7800" data-z="600"  data-scale="0.5">
+
+            <p style="font-size: 27px;line-height: 3;">
+                <span class="title">排序与决策</span>
+                <span>① 一个未排序的N个数字，一共有N！种排列方式</span><br/>
+                <span>② 插入 选择 归并每次根据比较数字的大小来选择是否交换</span><br>
+                <span>③ 类似于猜数字中询问数字大小，这个答案是： 是 or 否; <br/>
+                <span>④ 所以排序最佳的比较是每次比较后都可以排除1/2的可能性</span><br/>
+            </p>
+            
+        </div>
+
+        <div class="step hidden sideFace yaHei" data-x="26000" data-y="7800" data-z="-100"  data-scale="0.5">
+            <p style="line-height: 1.75; font-size: 30px;">
+                <span>+ 选择排序</span><br><br>
+                <span>+ 插入排序</span>
+
+                <span class="title">任何基于比较的排序算法永远逃脱不了<b style="color: #A00ADC">Nlog(N)</b>的命运</span><br>
+
+            </p>    
+        </div>
+
+    </div>
+        <!-- qsort -->
+        <div>
+            <div class="boxFace step" data-x="5000" data-y="90" data-z="-985" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="0.5">
+                <h1 class="main">年度最佳男主脚</h1>
+
+                <h2 style="font-size: 45px; padding-left: 500px"> —— 快排</h2>
+            </div>
+
+             <div class="boxFace step" data-x="5200" data-y="90" data-z="-1185" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title" style="padding: 50px 0 30px 62px">快排与分治</h2>
+
+                <div style="padding: 20px 0 0 50px; line-height: 2; font-family: 'Delicious', 'Arial', sans-serif">
+                    <div>排序序列:　<span class="number" style="color: #1c94c4;margin-left: 70px;">5 6 2 4 8 3 7</span></div>
+                    <div>
+                        一次分治:　<span class="numBlue" style="margin-right: 70px;margin-left: 40px;">3 2 4</span> <span class="numRed">5</span> <span class="numPink">8 6 7</span><br/>
+                    </div>
+                    <div>
+                        两次分治:　<span class="numBlue" style="margin-left: 25px;margin-right: 25px;">2</span> <span class="numRed">3</span> <span class="numBlue">4</span> <span class="numPink" style="margin-left: 30px;margin-right: 20px;">6</span> <span class="numPink">7</span> <span class="numRed">8</span>
+                    </div>
+                </div>
+            </div>
+
+                 
+
+            <div class="step boxFace"  data-x="5000" data-y="90" data-z="-1385" data-rotate-x="0" data-rotate-y="180" data-rotate-z="0" data-scale="0.5">
+                <h2 class="title2" style="padding-left: 40px">时间复杂度</h2>
+
+                <p>
+                    <span>快排的时间复杂度：O(NlogN)</span>  <br>
+                    <span>但这只是最好的情况</span><br>
+                    <span>最坏情况的时间复杂度 :  O(N^2)</span>
+                </p>
+
+                <p>
+                    尽量的避免最坏情况: 取数组中三个数的中位数
+                </p>
+            </div>
+
+
+        </div>
+
+
+        <div class="step hidden sideFace" data-x="8000" data-y="-8000" data-z="-8000">
+            <p style="padding: 100px 0 0 100px;">
+                <span class="title" style="padding-left: 200px;">本节课总结</span>
+                <span>① 减治 分治 递归思想</span><br/>
+                <span>② 如何评估算法性能</span><br/>
+                <span>③ 快排为什么那么快? —— 从猜数字到决策树</span><br/>
+                <span>④ 如何改进你的排序</span>
+            </p>
+        </div>
+
+        <div class="step hidden sideFace" data-x="8000" data-y="-7000" data-z="-8000">
+            <p style="padding: 100px 0 0 100px;">
+                <span class="title" style="padding-left: 133px;">本节课未讲知识清单</span>
+                <span>① 大O符号的由来</span><br/>
+                <span>② 内排序与外排序</span><br/>
+                <span>③ 插入排序的改进：希尔排序</span><br/>
+                <span>④ 优先队列与堆排序</span>
+            </p>
+        </div>
+
+        <div class="step hidden sideFace" data-x="8000" data-y="-6000" data-z="-8000">
+            <p style="padding: 100px 0 0 100px;">
+                <span class="title" style="padding-left: 133px;">课后作业与思考</span>
+                <span>① 编写 <b style="color: #A00ADC">选择 插入 快排</b>API接口</span><br>
+                <span>② 编写快速排序递归版 与 非递归版(手动实现栈)</span><br>
+                <span>③ 并编写测试函数输出排序时间进行对比</span>
+            </p>
+        </div>
+    </div>
+    
+
+   
+</div>
+
+
+<script src="js/iimpress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
